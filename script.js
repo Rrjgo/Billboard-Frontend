@@ -17,7 +17,7 @@ fetch('http://localhost:8000/msg').then((res) => {
 })
 
 sendBtn.onclick = async () => {
-    const data = {message: "testing button"}
+    const data = {message: document.getElementById("msg").value}
 
     await fetch('http://localhost:8000/msg', {
         body: JSON.stringify(data), // must match 'Content-Type' header
@@ -28,7 +28,7 @@ sendBtn.onclick = async () => {
     })
 
     messageDiv.innerHTML = ""
-
+    
     fetch('http://localhost:8000/msg').then((res) => {
         res.json().then((data) => {
 
