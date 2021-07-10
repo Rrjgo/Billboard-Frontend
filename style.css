@@ -1,0 +1,23 @@
+#heading{
+    text-align: center;
+    color: green;
+}
+
+#btn{
+    width:100px;
+    font-size:x-large;
+    font-weight: bold;
+}
+
+#textBox{
+    width:400px;
+    font-size: x-large;
+}
+
+#message{
+    height:500px;
+    width:500px;
+    overflow:auto;
+    background:#EEEEEE;
+    color: red;
+}

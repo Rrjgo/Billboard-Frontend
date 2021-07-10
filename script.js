@@ -3,7 +3,6 @@ console.log("Billboard")
 const messageDiv = document.getElementById("message")
 const sendBtn = document.getElementById('btn')
 
-
 fetch('http://localhost:8000/msg').then((res) => {
     res.json().then((data) => {
 
