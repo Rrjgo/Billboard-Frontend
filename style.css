@@ -1,23 +1,31 @@
 #heading{
     text-align: center;
-    color: green;
+    color: goldenrod;
 }
 
-#btn{
+#sendBtn{
     width:100px;
     font-size:x-large;
     font-weight: bold;
 }
 
 #textBox{
-    width:400px;
+    width:300px;
     font-size: x-large;
 }
 
 #message{
     height:500px;
-    width:500px;
+    width: 400px;
     overflow:auto;
     background:#EEEEEE;
-    color: red;
+    font-weight: bold;
+}
+
+#search{
+    height:500px;
+    width: 400px;
+    overflow:auto;
+    background:#EEEEEE;
+    font-weight: bold;
 }
