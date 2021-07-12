@@ -51,7 +51,7 @@ sendBtn.onclick = async () => {
 searchBtn.onclick = async () => {
     const searchdata = { message: document.getElementById("searchBox").value }
 
-    await fetch('http://localhost:8000/msg', {
+    await fetch('http://localhost:8000/msg/search', {
         body: JSON.stringify(searchdata), // must match 'Content-Type' header
         headers: {
             'content-type': 'application/json'
@@ -61,7 +61,7 @@ searchBtn.onclick = async () => {
 
     searchDiv.innerHTML = ""
 
-    fetch('http://localhost:8000/msg').then((res) => {
+    fetch('http://localhost:8000/msg/search').then((res) => {
         res.json().then((data) => {
 
             data.map(message => {
