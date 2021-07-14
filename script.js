@@ -1,12 +1,14 @@
 console.log("Billboard")
 
+const WEB_URL = https://billboard-backend-hj.herokuapp.com/msg
+
 const messageDiv = document.getElementById("message")
 const sendBtn = document.getElementById('sendBtn')
 
 const searchDiv = document.getElementById("search")
 const searchBtn = document.getElementById('searchBtn')
 
-fetch('http://localhost:8000/msg').then((res) => {
+fetch(WEB_URL).then((res) => {
     res.json().then((data) => {
 
         data.map(message => {
@@ -23,7 +25,7 @@ fetch('http://localhost:8000/msg').then((res) => {
 sendBtn.onclick = async () => {
     const data = { message: document.getElementById("textBox").value }
 
-    await fetch('http://localhost:8000/msg', {
+    await fetch(WEB_URL, {
         body: JSON.stringify(data), // must match 'Content-Type' header
         headers: {
             'content-type': 'application/json'
