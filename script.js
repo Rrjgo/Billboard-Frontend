@@ -1,6 +1,6 @@
 console.log("Billboard")
 
-const WEB_URL = https://billboard-backend-hj.herokuapp.com/msg
+const endpoint = 'https://billboard-backend-hj.herokuapp.com'
 
 const messageDiv = document.getElementById("message")
 const sendBtn = document.getElementById('sendBtn')
@@ -8,7 +8,7 @@ const sendBtn = document.getElementById('sendBtn')
 const searchDiv = document.getElementById("search")
 const searchBtn = document.getElementById('searchBtn')
 
-fetch(WEB_URL).then((res) => {
+fetch(`${endpoint}/msg`).then((res) => {
     res.json().then((data) => {
 
         data.map(message => {
@@ -25,7 +25,7 @@ fetch(WEB_URL).then((res) => {
 sendBtn.onclick = async () => {
     const data = { message: document.getElementById("textBox").value }
 
-    await fetch(WEB_URL, {
+    await fetch(`${endpoint}/msg`, {
         body: JSON.stringify(data), // must match 'Content-Type' header
         headers: {
             'content-type': 'application/json'
@@ -35,7 +35,7 @@ sendBtn.onclick = async () => {
 
     messageDiv.innerHTML = ""
 
-    fetch('http://localhost:8000/msg').then((res) => {
+    fetch(`${endpoint}/msg`).then((res) => {
         res.json().then((data) => {
 
             data.map(message => {
@@ -53,7 +53,7 @@ sendBtn.onclick = async () => {
 searchBtn.onclick = async () => {
     const searchdata = { message: document.getElementById("searchBox").value }
 
-    await fetch('http://localhost:8000/msg/search', {
+    await fetch(`${endpoint}/msg/search`, {
         body: JSON.stringify(searchdata), // must match 'Content-Type' header
         headers: {
             'content-type': 'application/json'
@@ -63,7 +63,7 @@ searchBtn.onclick = async () => {
 
     searchDiv.innerHTML = ""
 
-    fetch('http://localhost:8000/msg/search').then((res) => {
+    fetch(`${endpoint}/msg/search`).then((res) => {
         res.json().then((data) => {
 
             data.map(message => {
